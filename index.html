@@ -63,18 +63,29 @@
 
     // 👉 CHALLENGE 4
     function scrub(text, forbidden) {
-      let result = '';
+      let result = []
+      let words = text.split(" ")
 
-      for (let z of text) {
-        if (text[z] === forbidden) {
-
-        }
+      for (let char = 0; char < words.length; char++) {
+      if (forbidden.indexOf(words[char]) !== -1) {
+        result.push(Array(words[char].length + 1).join('x'));
+      } else {
+        result.push(words[char])
       }
+      
+      // console.log(words)
     }
+    return result.join(" ")
+  }
 
     // 👉 CHALLENGE 5 (bonus, NOT graded)
     function normalizePhoneNumber(num) {
+      // let phone = "(XXX) XXX-XXXX";
+      // let result = [];
+      // let pnums = phone.split(" ")
 
+      // pnums[0] = num
+      // console.log(pnums)
     }
 
     // 👉 CHALLENGE 6 (bonus, NOT graded)
